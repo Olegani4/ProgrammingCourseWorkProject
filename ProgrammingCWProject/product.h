@@ -1,5 +1,6 @@
 #pragma warning(disable : 4996)
 
+
 class Product {
 public:
 	friend bool productSort(const Product& prod1, const Product& prod2);
