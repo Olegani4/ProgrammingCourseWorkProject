@@ -1062,10 +1062,6 @@ int main() {
 	payments = clientPayment.read_payments(payments);
 	///><///
 
-	for (int i = 0; i < payments.size(); i++)
-		payments[i].dataOutput();
-	system("pause");
-
 	std::vector <Product> allProductsSave = allProducts;	// Create allProducts save.
 
 	bool escMM = false;
