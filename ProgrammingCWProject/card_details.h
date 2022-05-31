@@ -1,4 +1,3 @@
-
 class CardDetails {
 public:
 	void dataInput(unsigned int clientNumInp);
