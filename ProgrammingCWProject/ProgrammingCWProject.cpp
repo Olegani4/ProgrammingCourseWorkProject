@@ -1,11 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <cstring>	// strcpy(), strcmp()		https://www.cplusplus.com/reference/cstring/strcpy/	  +	  https://www.cplusplus.com/reference/cstring/strcmp/
-#include <limits>	// numeric_limits<streamsize>::max()		https://stackoverflow.com/questions/257091/how-do-i-flush-the-cin-buffer
-#include <conio.h>	// getch() - for Windows only
+#include <cstring>
+#include <limits>
+#include <conio.h>
 #include <fstream>
-#include <ctime>	// https://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c#:~:text=Get%20the%20current%20time%20either,formatters%20to%20output%20those%20times.
+#include <ctime>
 #include <algorithm>
 
 /// Headers ///
@@ -26,7 +26,7 @@ T isGreaterOrEqual(T price, T discountPrice) {
 	return price >= discountPrice;
 }
 
-/// Validation functions ///				 https://en.cppreference.com/w/cpp/string/basic_string/stof - std::stod
+/// Validation functions ///
 /**
  * @brief Check if string is appropriate to convert it to positive double.
  * @param numCheck The string for checking.
@@ -542,7 +542,7 @@ std::vector<Payment> Payment::read_payments(std::vector <Payment> payments) {
 	return payments;
 }
 
-/// Sort functions ///						https://stackoverflow.com/questions/16507717/sorting-a-vector-in-c-by-accessing-a-private-member
+/// Sort functions ///		
 /**
  * @brief Check vector products by names A-Z via comparing products' members of two vector elements.
  * @param prod1 Referenced constant variable of type Product.
@@ -640,7 +640,7 @@ bool colourSort(const Product& prod1, const Product& prod2)
 }
 ///><///
 
-/// Filter functions ///						https://www.techiedelight.com/how-to-filter-a-vector-in-cpp/
+/// Filter functions ///
 /**
  * @brief Filter products by input name.
  * @param allProducts Vector of type Product for containing all products.
@@ -1285,7 +1285,7 @@ int main() {
 
 			while (true) {	// Administrator Menu authorization and management.
 
-				/// Password for authorization to Administrator Menu ///		 https://www.geeksforgeeks.org/getch-function-in-c-with-examples/
+				/// Password for authorization to Administrator Menu ///
 				char password[8] = "admin";
 				///><///
 
