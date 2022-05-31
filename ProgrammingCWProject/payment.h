@@ -1,4 +1,3 @@
-
 class Payment {
 public:
 	void dataInput(std::vector <Product> clProducts, CardDetails clientCard);
