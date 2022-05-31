@@ -96,7 +96,7 @@ void Product::dataInput() {
 		std::cout << "Storage size (GB): ";
 		std::string storageSizeStr{};
 		std::getline(std::cin, storageSizeStr);
-		if (isPosUInumber(storageSizeStr) && storageSizeStr < "4294967295") {
+		if (isPosUInumber(storageSizeStr) && storageSizeStr < "999999999") {
 			storageSize = std::stoul(storageSizeStr);	// Assign storageSize converted value from string storageSizeStr.
 			break;
 		}
@@ -743,7 +743,7 @@ std::vector <Product> storageSizeFltr(std::vector <Product> allProducts, std::ve
 		std::getline(std::cin, storageSizeStr);
 		if (storageSizeStr.size() == 0)		// If ENTER pressed.
 			return allProducts;
-		if (isPosUInumber(storageSizeStr) && storageSizeStr < "4294967295") {		// Check if input is positive unsigned int.
+		if (isPosUInumber(storageSizeStr) && storageSizeStr < "999999999") {		// Check if input is positive unsigned int.
 			storageSize = std::stoul(storageSizeStr);	// Convert string to unsigned int.
 			break;
 		}
@@ -1062,6 +1062,10 @@ int main() {
 	payments = clientPayment.read_payments(payments);
 	///><///
 
+	for (int i = 0; i < payments.size(); i++)
+		payments[i].dataOutput();
+	system("pause");
+
 	std::vector <Product> allProductsSave = allProducts;	// Create allProducts save.
 
 	bool escMM = false;
@@ -1139,7 +1143,7 @@ int main() {
 					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 					if (prodNumStr == "0")	// Escape Add product loop to escape to Main Menu.
 						break;
-					if (isPosUInumber(prodNumStr) && prodNumStr < "4294967295") {	// Number validation.	
+					if (isPosUInumber(prodNumStr) && prodNumStr < "999999999") {	// Number validation.	
 						prodNum = std::stoul(prodNumStr);	// Convert string to unsigned int.
 						break;
 					}
@@ -1256,7 +1260,7 @@ int main() {
 				if ((paymentNumStr[0] == '0' && paymentNumStr.size() == 1) || paymentNumStr.empty())	// If payment number is equal to 0 
 																										// or is empty.
 					break;
-				if (isPosUInumber(paymentNumStr) && paymentNumStr < "4294967295") {		// Number validation.	
+				if (isPosUInumber(paymentNumStr) && paymentNumStr < "999999999") {		// Number validation.	
 					if (std::stoul(paymentNumStr) > payments.size()) {		// If payment number exceeds size of payments vector.
 						std::cout << "\n There is no payment #" << paymentNumStr << ".";
 						std::cout << "\n Check your payment number and try again.\n";
@@ -1383,7 +1387,7 @@ int main() {
 								std::cin >> prodNumStr;
 								if (prodNumStr == "0")
 									break;	// Escape from loop.
-								if (isPosUInumber(prodNumStr) && prodNumStr < "4294967295") {		// Number validation.
+								if (isPosUInumber(prodNumStr) && prodNumStr < "999999999") {		// Number validation.
 									prodNum = std::stoul(prodNumStr);	// Convert prodNumStr to unsigned int prodNum.
 									if (prodNum <= allProducts.size())	// If the limit of elements is reached.
 										break;
@@ -1418,7 +1422,7 @@ int main() {
 								std::cin >> prodNumStr;
 								if (prodNumStr == "0")
 									break;	// Escape from loop.
-								if (isPosUInumber(prodNumStr) && prodNumStr < "4294967295") {		// Number validation.
+								if (isPosUInumber(prodNumStr) && prodNumStr < "999999999") {		// Number validation.
 									prodNum = std::stoul(prodNumStr);	// Convert prodNumStr to unsigned int prodNum.
 									if (prodNum <= allProducts.size())	// If the limit of elements is reached.
 										break;
